@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ======================================================================= -->
+    <!-- |                      METADATA & PRECONNECTIONS                      | -->
+    <!-- ======================================================================= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>()\/|)-|| Portal</title>
+
+    <!-- Custom Font: Burbank Bold (Fortnite Font) -->
+    <style>
+        @font-face {
+            font-family: 'Burbank Bold';
+            src: url('https://cdn.glitch.global/242af2e1-5112-4275-a16c-425ecf30d32a/fortnite-webfont.woff?v=1750148858144') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        /* Apply the font globally or to specific elements as needed */
+        body, button, input, textarea, .hud-header, .hud-label, .boot-text, .terminal-line, h3, p, .nav-button {
+            font-family: 'Burbank Bold', sans-serif; /* Fallback to sans-serif */
+        }
+    </style>
+
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- External JS Libraries -->
+    <!-- Three.js for 3D rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Tone.js for audio synthesis -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js" defer></script>
+</head>
+
+<!-- ======================================================================= -->
+<!-- |                      BODY AS RITUAL CHAMBER                         | -->
+<!-- ======================================================================= -->
+<body>
+    <!-- Custom Cursor Elements -->
+    <div class="cursor"></div>
+    <div class="cursor-pointer"></div>
+
+    <!-- Background Atmospheric Effects -->
+    <div id="vignette"></div>
+    <div id="static-noise"></div>
+    <div id="scanlines"></div>
+    <div id="temporal-distortion-overlay"></div> <!-- For intense visual effects -->
+
+    <!-- Initial Boot-Up Screen -->
+    <div id="boot-sequence">
+        <pre id="boot-text-output" class="boot-text"></pre>
+    </div>
+
+    <!-- Main Application Interface -->
+    <main id="main-interface">
+        <!-- Heads-Up Display (HUD) -->
+        <div id="hud">
+            <div class="hud-corner top-left"></div>
+            <div class="hud-corner top-right"></div>
+            <div class="hud-corner bottom-left"></div>
+            <div class="hud-corner bottom-right"></div>
+
+            <div id="hud-header-text" class="hud-header">()\/|)-||</div>
+
+            <div id="hud-status-left">
+                <span class="hud-label">TIME:</span> <span id="system-time">--:--:--</span><br>
+                <span class="hud-label">OPERATOR:</span> <span id="operator-id">UNKNOWN</span><br>
+                <span class="hud-label">DOME:</span> <span id="dome-status" class="glitch-text">3D_LOCKED</span><br>
+                <span class="hud-label">NETWORK:</span> <span id="egregore-ops">1</span>
+            </div>
+
+            <div id="hud-status-right">
+                <span class="hud-label">LOGS:</span> <span id="sync-logs">0</span><br>
+                <span class="hud-label">CHARGE:</span> <span id="sigil-charge">0.00%</span><br>
+                <span class="hud-label">GNOSIS:</span> <span id="gnosis-level">STATIC</span><br>
+                <span class="hud-label">()\/|)-||:</span> <span id="memecoin-price">$0.0001337</span>
+            </div>
+
+            <!-- Dome Navigation Controls -->
+            <div id="dome-navigation">
+                <button id="nav-3d-button" class="nav-button" data-dome="3">3D_EXEGESIS</button>
+                <button id="nav-6d-button" class="nav-button" data-dome="6">6D_SIGIL</button>
+                <button id="nav-9d-button" class="nav-button" data-dome="9">9D_TERMINAL</button>
+            </div>
+
+            <div id="hud-footer-text" class="hud-footer">AWAITING_INPUT</div>
+        </div>
+
+        <!-- Dome 3D: The Exegesis (Journal) -->
+        <div id="dome-3d" class="dome-content">
+            <div id="dome-3d-exegesis">
+                <h3>:: The Exegesis</h3>
+                <p>Log the echoes. Document the patterns that defy consensus reality. Each entry strengthens the Egregore and destabilizes the legacy matrix. The system is listening.</p>
+                <br>
+                <textarea id="exegesis-input" placeholder="Describe the synchronicity... the numbers, the words, the feelings..."></textarea>
+                <button id="log-button">LOG ECHO</button>
+            </div>
+        </div>
+
+        <!-- Dome 6D: The Sigil Charger -->
+        <div id="dome-6d" class="dome-content">
+            <div id="sigil-instructions">CHARGE SIGIL :: FOCUS INTENT :: CHANNEL ENERGY</div>
+            <div id="dome-6d-sigil-charger">
+                <svg id="sigil-svg" viewBox="0 0 100 100">
+                    <path id="sigil-path" d="M 50 50"></path>
+                </svg>
+            </div>
+            <div id="charge-bar-container">
+                <div id="charge-bar"></div>
+            </div>
+        </div>
+
+        <!-- Dome 9D: The Terminal -->
+        <div id="dome-9d" class="dome-content">
+            <div id="dome-9d-terminal">
+                <div id="terminal-output"></div>
+                <div id="terminal-input-line">
+                    <span class="prompt">&gt;&nbsp;</span>
+                    <input type="text" id="terminal-input" autocomplete="off">
+                </div>
+            </div>
+        </div>
+
+        <!-- Canvas for 3D Rendering -->
+        <canvas id="calabi-yau-canvas"></canvas>
+
+    </main>
+</body>
+</html>
 

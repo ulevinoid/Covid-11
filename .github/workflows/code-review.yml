@@ -1,0 +1,18 @@
+name: ChatGPT Code Review
+permissions:
+  contents: read
+  pull-requests: write
+on:
+  pull-request:
+    types: [opened, reopened, synchronize]
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: anc95/ChatGPT-CodeReview@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          LANGUAGE: JavaScript
+          MODEL: gpt-3.5-turbo
+          PROMPT: "Analyze JavaScript, HTML, and CSS for syntax errors, performance issues, and best practices. Focus on Three.js and Tone.js integrations, event listeners, DOM manipulation, and font loading with 'fortnite-webfont.woff'. Suggest fixes for potential runtime errors, especially for boot sequence, dome transitions, audio initialization, and font integration. Prioritize stability for the live site at https://ulevinoid.github.io/Covid-11/. Leverage all available model capabilities with 'All' permissions."
